@@ -1,0 +1,14 @@
+<article class="post-card">
+    {{#if feature_image}}
+        <div class="post-card-image" style="background-image: url({{feature_image}})"></div>
+    {{/if}}
+    <div class="post-card-content {{#unless feature_image}}no-image{{/unless}}">
+        <section class="post-card-title">
+            <a href="{{url}}">{{title}}</a>
+        </section>
+        <section class="post-card-excerpt">
+            <p>{{excerpt words="60"}} ..</p>
+        </section>
+    </div>
+</article>
+<div class="clearfix"></div>

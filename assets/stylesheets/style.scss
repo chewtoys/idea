@@ -1,0 +1,396 @@
+// Config
+
+$max-width: 1040px;
+$main-color: #3D5A80;
+
+// Ghost Editor Style
+
+.kg-width-wide {
+    max-width: 85%;
+}
+.kg-width-full {
+    max-width: 100%;
+}
+
+// Container
+
+.container {
+    width: 100%;
+    .inner {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+}
+
+// Header
+
+header {
+    background-color: #f8f8f8;
+
+    .inner {
+        height: 60px;
+        line-height: 60px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+
+        .header-logo {
+            span {
+                font-size: 1.4rem;
+                font-weight: 500;
+                color: $main-color;
+            }
+            img {
+                height: 70%;
+                margin: 15% 0;
+            }
+        }
+
+        .header-nav {
+            .nav {
+                display: flex;
+                
+                li {
+                    margin-left: 15px;
+                    font-size: 1rem;
+                    
+                    a {
+                        color: #444;
+                        text-decoration: none;
+                    }
+                }
+                li.nav-current {
+                    a {
+                        color: $main-color;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Footer
+footer {
+    background: $main-color;
+    .inner {
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        p {
+            line-height: 60px;
+            color: #CCCCCC;
+            font-size: .9rem;
+            font-weight: 100;
+            a {
+                color: #FFFFFF;
+                text-decoration: none;
+                transition: all .3s;
+            }
+            a:hover {
+                color: #DDDDDD;
+            }
+        }
+    }
+}
+
+// Index
+
+.index {
+    margin-bottom: 80px;
+    .inner {
+        padding: 0 20px;
+    }
+
+    .index-desc {
+        height: 160px;
+        line-height: 130px;
+        margin-bottom: 80px;
+        font-size: 1.6rem;
+        font-weight: 300;
+        text-align: center;
+        background-color: #f8f8f8;
+        box-shadow: 0px 5px 5px -5px #eee;
+    }
+
+}
+
+// Post Card
+
+.post-card {
+    display: inline-block;
+    margin-bottom: 50px;
+
+    .post-card-image {
+        width: 320px;
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        float: left;
+    }
+
+    .post-card-content {
+        min-height: 200px;
+        margin-left: 350px;
+
+        .post-card-title {
+            margin-bottom: .5rem;
+            a {
+                color: $main-color;
+                text-decoration: none;
+                font-size: 1.5rem;
+            }
+        }
+
+        .post-card-excerpt {
+            p {
+                margin: 0;
+                font-size: 1.1rem;
+                font-weight: 300;
+            }
+        }
+    }
+    .post-card-content.no-image {
+        margin-left: 0px;
+        min-height: inherit;
+    }
+
+}
+
+// Post
+.content {
+    .post-desc {
+        padding: 150px 0 200px 0;
+        text-align: center;
+        background-color: #f8f8f8;
+        box-shadow: 0px 5px 5px -5px #eee;
+        position: relative;
+        h1 {
+            line-height: 30px;
+            margin: 0;
+            color: #fff;
+            position: relative;
+            z-index: 20;
+        }
+        .post-full-meta {
+            line-height: 20px;
+            font-size: .9rem;
+            padding-top: 10px;
+            position: relative;
+            z-index: 20;
+            time {
+                color: #fff;
+            }
+            span {
+                color: #fff;
+            }
+            a {
+                color: #fff;
+            }
+        }
+        .post-full-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 10;
+        }
+        .post-full-image:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0,0,0,.6);
+            z-index: 11;
+        }
+    }
+    .post-desc.no-image {
+        h1, time, span, a {
+            color: #333;
+        }
+    }
+
+    .inner {
+        .detail {
+            padding: 60px 0;
+        }
+    }
+    
+    .post-author {
+        padding: 30px 20px;
+        background: #f8f8f8;
+        .author-item {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .name {
+                display: flex;
+                a {
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 10px;
+                    img {
+                        border-radius: 25px;
+
+                    }
+                }
+                h2 {
+                    margin: 0;
+                    line-height: 50px;
+                }
+            }
+            .bio {
+                text-align: right;
+            }
+        }
+    }
+
+    .creativecommons {
+        width: 100%;
+        line-height: 100px;
+        text-align: center;
+        border-top: 1px solid #eee;
+    }
+    .comment {
+        padding: 50px 0;
+    }
+}
+
+// Tag
+.tag {
+    .tag-desc {
+        padding: 100px 0 150px 0;
+        text-align: center;
+        background-color: #f8f8f8;
+        box-shadow: 0px 5px 5px -5px #eee;
+        position: relative;
+        .tag-title {
+            line-height: 50px;
+            margin: 0;
+            color: #fff;
+            position: relative;
+            z-index: 20;
+        }
+        .tag-description {}
+
+        .tag-full-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 10;
+        }
+        .tag-full-image:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0,0,0,.6);
+            z-index: 11;
+        }
+    }
+    .tag-desc.no-image {
+        h1, h2 {
+            color: #333;
+        }
+    }
+
+    .inner {
+        padding-top: 50px;
+    }
+}
+
+// Author
+.author {
+    padding: 50px 0;
+    text-align: center;
+    h3 {
+        line-height: 2;
+    }
+    .author-profile-image {
+        width: 100%;
+        padding: 10px 0;
+        img {
+            height: 80px;
+            border-radius: 50%;
+            border: 5px solid rgba(0,0,0,.05);
+        }
+    }
+    .author-meta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .author-location,
+        .author-stats {
+            color: #999;
+            font-size: 1rem;
+            font-weight: 100;
+        }
+
+        .bull {
+            display: inline-block;
+            margin: 0 12px;
+            opacity: .5;
+        }
+        
+        .social-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 10px;
+            color: #999;
+            opacity: 0.8;
+            a:last-of-type {
+                padding-right: 20px;
+            }    
+            svg {
+                height: 1.8rem;
+                fill: #999;
+            }
+        }
+        
+        .social-link:hover {
+            opacity: 1;
+        }
+        
+        .social-link.social-link-fb svg {
+            height: 1.5rem;
+        }
+        
+        .social-link.social-link-wb svg {
+            height: 1.6rem;
+        }
+        
+        .social-link.social-link-wb svg path {
+            stroke: #999;
+        }
+        
+        .social-link.social-link-rss svg {
+            height: 1.9rem;
+        }
+    }
+}
+
+// Clear Fix
+
+.clearfix{
+    clear:both;
+    height:0;
+    overflow:hidden;
+}

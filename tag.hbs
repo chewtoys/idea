@@ -1,0 +1,26 @@
+{{!< default}}
+
+<div class="container tag">
+
+    {{#tag}}
+    <div class="tag-desc{{#unless feature_image}} no-image{{/unless}}">
+        <h1 class="tag-title">{{name}}</h1>
+        <h2 class="tag-description">
+            {{#if description}}
+                {{description}}
+            {{else}}
+                A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+            {{/if}}
+        </h2>
+        {{#if feature_image}}
+        <div class="tag-full-image" style="background-image: url({{feature_image}})"></div>
+        {{/if}}
+    </div>
+    {{/tag}}
+
+    <div class="inner">
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+    </div>
+</div>

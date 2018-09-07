@@ -1,0 +1,70 @@
+{{!< default}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+
+<main class="container content">
+    <div class="post-desc{{#unless feature_image}} no-image{{/unless}}">
+        <h1>{{title}}</h1>
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+            <span>/</span>
+            {{#primary_tag}}
+                <a href="{{url}}">{{name}}</a>
+            {{/primary_tag}}
+        </section>
+        {{#if feature_image}}
+        <div class="post-full-image" style="background-image: url({{feature_image}})"></div>
+        {{/if}}
+    </div>
+    <article class="inner">
+        <div class="detail">
+            {{content}}
+        </div>
+
+        <div class="creativecommons">
+            本作品采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+        </div>
+
+        <div class="post-author">
+
+            {{#foreach authors}}
+                <div class="author-item">
+                    <div class="name">
+                        {{#if profile_image}}
+                            <a href="{{url}}" class="moving-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
+                        {{else}}
+                            <a href="{{url}}" class="moving-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                        {{/if}}
+                        <h2>{{name}}</h2>
+                    </div>
+                    <div class="bio">
+                        {{#if bio}}
+                            <p>{{bio}}</p>
+                        {{/if}}
+                        <p><a href="{{url}}">MORE</a></p>
+                    </div>
+                </div>
+            {{/foreach}}
+
+        </div>
+
+        <div class="comment">
+            <div id="disqus_thread"></div>
+        </div>
+    </article>
+</main>
+
+{{/post}}
+
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+    // Disqus
+    var d = document, s = d.createElement('script');
+    s.src = 'https://iamvanish.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+</script>
+{{/contentFor}}

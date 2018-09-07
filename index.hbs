@@ -1,0 +1,22 @@
+{{!< default}}
+
+<div class="container index">
+    <div class="index-desc">
+        <div class="inner">
+            {{#if @blog.description}}
+            <span>{{@blog.description}}</span>
+            {{else}}
+            {{/if}}
+        </div>
+    </div>
+    <div class="inner">
+
+        {{#foreach posts}}
+
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
+
+        {{/foreach}}
+
+    </div>
+</div>
