@@ -35,14 +35,17 @@ header {
         justify-content: space-between;
 
         .header-logo {
-            span {
-                font-size: 1.4rem;
-                font-weight: 500;
-                color: $main-color;
-            }
-            img {
-                height: 70%;
-                margin: 15% 0;
+            a {
+                text-decoration: none;
+                span {
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    color: $main-color;
+                }
+                img {
+                    height: 70%;
+                    margin: 15% 0;
+                }
             }
         }
 
@@ -140,6 +143,7 @@ footer {
                 color: $main-color;
                 text-decoration: none;
                 font-size: 1.5rem;
+                font-weight: 500;
             }
         }
 

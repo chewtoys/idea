@@ -1,11 +1,13 @@
 <header class="container">
     <div class="inner">
         <div class="header-logo">
-            {{#if @blog.logo}}
-                <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
-            {{else}}
-                <span>{{@blog.title}}</span>
-            {{/if}}
+            <a href="/">
+                {{#if @blog.logo}}
+                    <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+                {{else}}
+                    <span>{{@blog.title}}</span>
+                {{/if}}
+            </a>
         </div>
         <div class="header-nav">
             {{navigation}}
