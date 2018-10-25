@@ -134,6 +134,11 @@ pre {
   padding: 1em 1.5em;
   display: block;
   -webkit-overflow-scrolling: touch;
+  white-space:pre-wrap;
+  white-space:-moz-pre-wrap;
+  white-space:-pre-wrap;
+  white-space:-o-pre-wrap;
+  word-wrap:break-word;
 }
 
 /* 一致化 horizontal rule */
