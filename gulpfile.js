@@ -27,6 +27,7 @@ const uglify = require('rollup-plugin-uglify');
 gulp.task('css', function () {
   return gulp.src([
         'assets/stylesheets/reset.css',
+        'node_modules/purecss//build/pure.css',
         'assets/stylesheets/style.scss'
       ])
       .pipe(plumber({
