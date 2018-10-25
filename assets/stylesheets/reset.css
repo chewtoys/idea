@@ -226,7 +226,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content a {
-  color: #3D5A80;
+  color: #ff3c49;
 }
 /* 同 ul/ol，在文章中应用 table 基本格式 */
 .content table th, .content table td, .content table caption {
