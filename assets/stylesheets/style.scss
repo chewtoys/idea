@@ -153,26 +153,19 @@ footer {
         .inner {
             padding: 0 20px;
         }
-    }
-    .macbook {
-        position: absolute;
-        left: 15%;
-        bottom: 30px;
-        width: 240px;
-        height: 240px;
-        background: url(/assets/images/macbook.svg) no-repeat;
-        background-position: center;
-        background-size: contain;
-    }
-    .html {
-        position: absolute;
-        right: 15%;
-        bottom: 0px;
-        width: 200px;
-        height: 200px;
-        background: url(/assets/images/html.svg) no-repeat;
-        background-position: center;
-        background-size: contain;
+
+        .macbook {
+            height: 260px;
+            background: url(/assets/images/macbook.svg) no-repeat;
+            background-position: 30% 30px;
+            background-size: 70%;
+        }
+        .html {
+            height: 260px;
+            background: url(/assets/images/html.svg) no-repeat;
+            background-position: 70% 80px;
+            background-size: 60%;
+        }
     }
 }
 
