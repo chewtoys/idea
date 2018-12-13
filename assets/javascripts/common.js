@@ -1,5 +1,5 @@
 
-// Add class to element => https://www.sitepoint.com/add-remove-css-class-vanilla-js/
+// Add Class
 export function addNewClass (elements, myClass) {
   // if there are no elements, we're done
   if (!elements) { return; }
@@ -19,7 +19,7 @@ export function addNewClass (elements, myClass) {
   }
 }
 
-// Remove class from element => https://www.sitepoint.com/add-remove-css-class-vanilla-js/
+// Remove Class
 export function removeClass (elements, myClass) {
   // if there are no elements, we're done
   if (!elements) { return; }
@@ -36,4 +36,22 @@ export function removeClass (elements, myClass) {
   for (var i=0; i<elements.length; i++) {
       elements[i].className = elements[i].className.replace(reg,' ');
   }
+}
+
+// 返回顶部跳转动画
+export function smoothScroll () {
+  // Calculate how far and how fast to scroll
+  var startLocation = window.pageYOffset;
+  var endLocation = 0;
+  var distance = endLocation - startLocation;
+  var increments = distance/(500/16);
+  // Scroll the page by an increment, and check if it's time to stop
+  var animateScroll = function () {
+      window.scrollBy(0, increments);
+      if (window.pageYOffset === 0) {
+        clearInterval(runAnimation);
+      }
+  };
+  // Loop the animation function
+  var runAnimation = setInterval(animateScroll, 16);
 }
