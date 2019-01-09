@@ -1,45 +1,4 @@
-{{!< default}}
-
-{{#author}}
-<div class="container author">
-    <div class="inner">
-        {{#if profile_image}}
-            <div class="author-profile-image">
-                <img src="{{profile_image}}" alt="{{name}}" />
-            </div>
-        {{/if}}
-        <h1>{{name}}</h1>
-        {{#if bio}}
-            <h3>{{bio}}</h3>
-        {{/if}}
-
-        <div class="author-meta">
-            {{#if location}}
-                <div class="author-location">{{location}} <span class="bull">&bull;</span></div>
-            {{/if}}
-            <div class="author-stats">
-                {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} <span class="bull">&bull;</span>
-            </div>
-            {{#if website}}
-                <a class="social-link social-link-wb" href="{{website}}" target="_blank" rel="noopener">{{> "icons/website"}}</a>
-            {{/if}}
-            {{#if twitter}}
-                <a class="social-link social-link-tw" href="{{twitter_url}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-            {{/if}}
-            {{#if facebook}}
-                <a class="social-link social-link-fb" href="{{facebook_url}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-            {{/if}}
-            <a class="social-link social-link-rss" href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
-        </div>
-    </div>
-</div>
-{{/author}}
-
-{{!-- The main content area --}}
-<main class="container">
-    <div class="inner">
-        {{#foreach posts}}
-            {{> "post-card"}}
-        {{/foreach}}
-    </div>
-</main>
+<!DOCTYPE html><html><head><meta http-equiv=Content-Type content="text/html; charset=UTF-8"><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><title>{{meta_title}}</title><!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]--><link rel=icon href=/favicon.ico>{{ghost_head}}<link href=/assets/css/author.6af8ca07.css rel=preload as=style><link href=/assets/js/author.cceb8454.js rel=preload as=script><link href=/assets/js/chunk-vendors.86da1dd8.js rel=preload as=script><link href=/assets/css/author.6af8ca07.css rel=stylesheet></head><body><div id=app></div>{{ghost_foot}}<script src=/assets/js/chunk-vendors.86da1dd8.js></script><script src=/assets/js/author.cceb8454.js></script></body></html>
