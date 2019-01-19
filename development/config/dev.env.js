@@ -6,11 +6,11 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://localhost:2368',
+        target: 'https://linhong.me',
         changeOrigin: true
       },
       '/ghost-sdk.js': {
-        target: 'http://localhost:2368',
+        target: 'https://linhong.me',
         changeOrigin: true
       }
     }

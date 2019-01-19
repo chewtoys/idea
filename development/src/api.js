@@ -1,40 +1,19 @@
 
-import axios from 'axios';
+import GhostContentAPI from '@tryghost/content-api';
 
-const instance = axios.create({
-  timeout: 6000,
+const api = new GhostContentAPI({
+  host: 'https://linhong.me',
+  key: '96aec596e34372ae8cb464dd57',
+  version: 'v2',
 });
 
-// 构造发起请求通用方法
-async function http(url, data) {
-  // 调用 GHOST SDK 生成URL
-  const ghostURL = window.ghost.url.api(url, data);
-  // 发起请求
-  try {
-    const start = await instance({
-      url: ghostURL,
-      method: 'GET',
-      data,
-      headers: {},
-    });
-    return start.data;
-  } catch (err) {
-    return {
-      err,
-    };
-  }
-}
-
-// ---------------------------------------------------------------------
-// -------------------------- 账户相关接口 -------------------------------
-// ---------------------------------------------------------------------
-
-// 登录
+// 文章列表
 async function posts() {
-  return http('posts', {
+  const data = await api.posts.browse({
     limit: 10,
-    include: 'author,tags',
+    include: 'tags,authors',
   });
+  return data;
 }
 
 

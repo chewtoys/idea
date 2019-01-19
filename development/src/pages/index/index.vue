@@ -4,8 +4,9 @@
       <Header></Header>
 
       <div class="cover">
-        <div class="desc">{{meta_description}}</div>
+        <div class="cover-mask"></div>
       </div>
+      <div class="desc">{{meta_description}}</div>
 
       <el-main class="main">
 
@@ -69,7 +70,7 @@ export default {
     this.meta_description = document.getElementsByTagName('meta').description.content;
 
     const data = await this.$api.posts();
-    this.posts = data.posts;
+    this.posts = data;
   },
 };
 </script>
@@ -79,24 +80,41 @@ export default {
   position: relative;
 
   .cover {
+    position: relative;
     width: 100%;
-    height: 900px;
+    min-height: calc(100vh - 60px);
     background: url(../../assets/background.jpg) no-repeat;
     background-position: bottom;
     background-size: cover;
-    .desc {
-      padding-top: 260px;
-      font-size: 2.5rem;
-      font-weight: 300;
-      text-align: center;
-      color: #fff;
-      user-select: none;
+
+    .cover-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(#000000, 0.16);
     }
   }
+  .desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 260px;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    user-select: none;
+    z-index: 9999;
+  }
+
   .main {
     padding-bottom: 60px;
     background: #f6f6f6;
     overflow: initial;
+    z-index: 3;
     .main-inner {
       max-width: 1140px;
       min-height: 300px;
