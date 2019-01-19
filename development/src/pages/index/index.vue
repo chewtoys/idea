@@ -31,8 +31,11 @@
                 <h1 class="post-content-title">
                   <a :href="item.url">{{item.title}}</a>
                 </h1>
-                <p class="post-content-excerpt">
+                <p class="post-content-excerpt" v-if="item.custom_excerpt">
                   {{item.custom_excerpt}}
+                </p>
+                <p class="post-content-excerpt" v-else>
+                  {{item.excerpt}}
                 </p>
               </el-col>
             </el-row>
@@ -42,6 +45,10 @@
         </div>
 
       </el-main>
+
+      <div class="pagination">
+        <div class="pagination-inner"></div>
+      </div>
 
       <el-footer class="footer" height="80px">© 2018 {{title}} All right Reserved.</el-footer>
     </el-container>
@@ -80,6 +87,7 @@ export default {
     // 获取文章列表
     const data = await this.$api.posts();
     this.posts = data;
+    console.log(data.meta)
   },
 };
 </script>
@@ -88,6 +96,7 @@ export default {
 #index {
   position: relative;
 
+  // 封面
   .cover {
     position: relative;
     width: 100%;
@@ -105,6 +114,8 @@ export default {
       background: rgba(#000000, 0.16);
     }
   }
+
+  // 介绍
   .desc {
     position: absolute;
     top: 0;
@@ -119,8 +130,9 @@ export default {
     z-index: 1;
   }
 
+  // 文章列表
   .main {
-    padding-bottom: 60px;
+    padding-bottom: 30px;
     background: #f6f6f6;
     overflow: initial;
     z-index: 1;
@@ -202,6 +214,21 @@ export default {
     }
   }
 
+  // 分页
+  .pagination {
+    padding: 0 20px 60px 20px;
+    background: #f6f6f6;
+    overflow: initial;
+    z-index: 1;
+    .pagination-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      border-radius: 5px;
+    }
+  }
+
+
+  // 底部
   .footer {
     line-height: 80px;
     font-size: .9rem;
