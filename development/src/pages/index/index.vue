@@ -6,7 +6,7 @@
       <div class="cover">
         <div class="cover-mask"></div>
       </div>
-      <div class="desc">{{meta_description}}</div>
+      <div class="desc">{{description}}</div>
 
       <el-main class="main">
 
@@ -19,12 +19,12 @@
           >
 
             <el-row :gutter="30">
-              <el-col :xs="24" :sm="12" :md="8" class="post-feature" v-if="item.feature_image">
+              <el-col :xs="24" :sm="8" :md="8" class="post-feature" v-if="item.feature_image">
                 <a :href="item.url">
                   <img :src="item.feature_image" :alt="item.title" />
                 </a>
               </el-col>
-              <el-col :xs="24" :sm="12" :md="16" class="post-content">
+              <el-col :xs="24" :sm="16" :md="16" class="post-content">
                 <span class="post-content-tag">
                   <a :href="`/tag/${item.primary_tag.slug}`">{{item.primary_tag.name}}</a>
                 </span>
@@ -43,7 +43,7 @@
 
       </el-main>
 
-      <el-footer class="footer" height="80px">© 2018 {{meta_title}} All right Reserved.</el-footer>
+      <el-footer class="footer" height="80px">© 2018 {{title}} All right Reserved.</el-footer>
     </el-container>
   </div>
 </template>
@@ -56,19 +56,28 @@ export default {
   name: 'app',
   data() {
     return {
-      meta_title: '',
-      meta_description: '',
       posts: [],
     };
   },
   components: {
     Header,
   },
+  computed: {
+    title() {
+      return this.$store.state.site_title;
+    },
+    description() {
+      return this.$store.state.site_desc;
+    },
+  },
   async mounted() {
-    // 获取 Meta
-    this.meta_title = document.querySelector('title').text;
-    this.meta_description = document.getElementsByTagName('meta').description.content;
+    // 获取博客设置
+    const config = await this.$api.setting();
+    this.$store.commit('setSiteTitle', config.title);
+    this.$store.commit('setSiteNav', config.navigation);
+    this.$store.commit('setSiteDesc', config.description);
 
+    // 获取文章列表
     const data = await this.$api.posts();
     this.posts = data;
   },
@@ -107,14 +116,14 @@ export default {
     text-align: center;
     color: #fff;
     user-select: none;
-    z-index: 9999;
+    z-index: 1;
   }
 
   .main {
     padding-bottom: 60px;
     background: #f6f6f6;
     overflow: initial;
-    z-index: 3;
+    z-index: 1;
     .main-inner {
       max-width: 1140px;
       min-height: 300px;
@@ -169,6 +178,11 @@ export default {
             font-size: .9rem;
             a {
               color: #999;
+            }
+          }
+          @media (max-width: 768px) {
+            .post-content-tag {
+              padding-top: 10px;
             }
           }
           .post-content-title {

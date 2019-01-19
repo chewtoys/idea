@@ -3,13 +3,13 @@
     <el-header height="80px">
       <el-row>
         <el-col :span="6">
-          <div class="logo"><a href="/">{{meta_title}}</a></div>
+          <div class="logo"><a href="/">{{title}}</a></div>
         </el-col>
         <el-col :span="12" :offset="6">
           <ul class="nav">
-            <li><a href="/">首页</a></li>
-            <li><a href="/tag">标签</a></li>
-            <li><a href="/author">作者</a></li>
+            <li v-for="(item, index) in navigation" v-bind:key="index">
+              <a :href="item.url">{{item.label}}</a>
+            </li>
           </ul>
         </el-col>
       </el-row>
@@ -22,15 +22,18 @@
 export default {
   name: 'app',
   data() {
-    return {
-      meta_title: '',
-    };
+    return {};
+  },
+  computed: {
+    title() {
+      return this.$store.state.site_title;
+    },
+    navigation() {
+      return this.$store.state.site_nav;
+    },
   },
   components: {},
-  async mounted() {
-    // 获取 Meta
-    this.meta_title = document.querySelector('title').text;
-  },
+  mounted() {},
 };
 </script>
 
@@ -40,6 +43,7 @@ export default {
   left: 0;
   top: 0;
   width: 100%;
+  z-index: 1;
 
   a {
     font-size: 1.1rem;

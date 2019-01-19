@@ -16,7 +16,13 @@ async function posts() {
   return data;
 }
 
+// 博客设置
+async function setting() {
+  const data = await api.settings.browse();
+  return data;
+}
 
 export default {
   posts,
+  setting,
 };
