@@ -29,7 +29,7 @@
                   <a :href="`/tag/${item.primary_tag.slug}`">{{item.primary_tag.name}}</a>
                 </span>
                 <h1 class="post-content-title">
-                  <a :href="item.url">{{item.title}}</a>
+                  <a :href="`/${item.slug}`">{{item.title}}</a>
                 </h1>
                 <p class="post-content-excerpt" v-if="item.custom_excerpt">
                   {{item.custom_excerpt}}
@@ -60,7 +60,7 @@
 import Header from '../../components/Header.vue';
 
 export default {
-  name: 'app',
+  name: 'Index',
   data() {
     return {
       posts: [],
@@ -87,7 +87,6 @@ export default {
     // 获取文章列表
     const data = await this.$api.posts();
     this.posts = data;
-    console.log(data.meta)
   },
 };
 </script>

@@ -16,6 +16,19 @@ async function posts() {
   return data;
 }
 
+// 文章内容
+async function postDetail(params) {
+  const data = await api.posts.read(
+    {
+      slug: params.slug,
+    },
+    {
+      formats: ['html'],
+    },
+  );
+  return data;
+}
+
 // 博客设置
 async function setting() {
   const data = await api.settings.browse();
@@ -24,5 +37,6 @@ async function setting() {
 
 export default {
   posts,
+  postDetail,
   setting,
 };
