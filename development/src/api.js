@@ -1,9 +1,10 @@
 
 import GhostContentAPI from '@tryghost/content-api';
+import Config from './config';
 
 const api = new GhostContentAPI({
-  host: 'https://linhong.me',
-  key: '96aec596e34372ae8cb464dd57',
+  host: Config.ghost_host,
+  key: Config.ghost_key,
   version: 'v2',
 });
 

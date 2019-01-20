@@ -61,6 +61,7 @@
 <script>
 
 import Header from '../../components/Header.vue';
+import Config from '../../config';
 
 export default {
   name: 'Tag',
@@ -89,8 +90,8 @@ export default {
     this.$store.commit('setSiteDesc', config.description);
 
     // 获取 Slug
-    // const path = window.location.pathname;
-    const path = '/tag/photography/';
+    const path = Config.env === 'prod'
+      ? window.location.pathname : '/tag/photography/';
     const slug = path.split('/')[2];
 
     // 获取标签信息

@@ -3,19 +3,6 @@ module.exports = {
 
   assetsDir: 'assets',
 
-  devServer: {
-    proxy: {
-      '/api': {
-        target: 'https://linhong.me',
-        changeOrigin: true
-      },
-      '/ghost-sdk.js': {
-        target: 'https://linhong.me',
-        changeOrigin: true
-      }
-    }
-  },
-
   pages: {
     index: {
       entry: 'src/pages/index/index.js',
