@@ -29,6 +29,29 @@ async function postDetail(params) {
   return data;
 }
 
+// 标签信息
+async function tagInfo(params) {
+  const data = await api.tags.read(
+    {
+      slug: params.slug,
+    },
+    {
+      include: 'count.post',
+    },
+  );
+  return data;
+}
+
+// 标签列表
+async function tagList(params) {
+  const data = await api.posts.browse({
+    limit: 10,
+    include: 'tags,authors',
+    filter: `tags:${params.slug}`,
+  });
+  return data;
+}
+
 // 博客设置
 async function setting() {
   const data = await api.settings.browse();
@@ -38,5 +61,7 @@ async function setting() {
 export default {
   posts,
   postDetail,
+  tagInfo,
+  tagList,
   setting,
 };

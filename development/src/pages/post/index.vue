@@ -33,7 +33,7 @@
 import Header from '../../components/Header.vue';
 
 export default {
-  name: 'Index',
+  name: 'Post',
   data() {
     return {
       post: {},
@@ -58,7 +58,8 @@ export default {
     this.$store.commit('setSiteDesc', config.description);
 
     // 获取文章内容
-    const slug = process.env.NODE_ENV === 'production' ? window.location.pathname.substring(1) : 'guan-cheng';
+    // const slug = window.location.pathname.substring(1);
+    const slug = 'guan-cheng';
     const data = await this.$api.postDetail({
       slug,
     });
