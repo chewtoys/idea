@@ -118,7 +118,7 @@ export default {
   .cover {
     position: relative;
     width: 100%;
-    min-height: calc(70vh - 60px);
+    min-height: 360px;
     background: url(../../assets/background.jpg) no-repeat;
     background-position: bottom;
     background-size: cover;
@@ -129,7 +129,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(#000000, 0.16);
+      background: rgba(#000000, 0.5);
     }
   }
 
@@ -139,7 +139,7 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    padding-top: 120px;
+    padding-top: 100px;
     user-select: none;
     z-index: 1;
     color: #fff;
@@ -149,7 +149,7 @@ export default {
       text-align: center;
     }
     p {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: 300;
       text-align: center;
       margin: 0;

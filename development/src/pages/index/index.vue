@@ -99,7 +99,7 @@ export default {
   .cover {
     position: relative;
     width: 100%;
-    min-height: calc(100vh - 60px);
+    min-height: 650px;
     background: url(../../assets/background.jpg) no-repeat;
     background-position: bottom;
     background-size: cover;
@@ -139,7 +139,7 @@ export default {
       max-width: 1140px;
       min-height: 300px;
       margin: -100px auto 0;
-      padding: 50px 0;
+      padding: 20px 0;
       background: #ffffff;
       border-radius: 5px;
 
@@ -218,7 +218,6 @@ export default {
     padding: 0 20px 60px 20px;
     background: #f6f6f6;
     overflow: initial;
-    z-index: 1;
     .pagination-inner {
       max-width: 1140px;
       margin: 0 auto;

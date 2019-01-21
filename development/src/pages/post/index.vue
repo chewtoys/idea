@@ -89,7 +89,7 @@ export default {
   .cover {
     position: relative;
     width: 100%;
-    min-height: calc(70vh - 60px);
+    min-height: 360px;
     background: url(../../assets/background.jpg) no-repeat;
     background-position: bottom;
     background-size: cover;
@@ -100,7 +100,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(#000000, 0.36);
+      background: rgba(#000000, 0.5);
     }
   }
 
@@ -110,8 +110,8 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    padding-top: 160px;
-    font-size: 2.5rem;
+    padding-top: 120px;
+    font-size: 2.2rem;
     font-weight: 300;
     text-align: center;
     color: #fff;
