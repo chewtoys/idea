@@ -1,14 +1,21 @@
 <template>
   <div id="components-header">
-    <el-header height="80px">
+    <el-header
+      :height="HeaderHeight"
+      :style="{
+        lineHeight: HeaderHeight,
+        background: HeaderScrollColor,
+        boxShadow: HeaderShadow,
+      }"
+    >
       <el-row>
         <el-col :span="6">
-          <div class="logo"><a href="/">{{title}}</a></div>
+          <div class="logo"><a href="/" :style="{color: HeaderFontColor}">{{title}}</a></div>
         </el-col>
         <el-col :span="12" :offset="6">
           <ul class="nav">
             <li v-for="(item, index) in navigation" v-bind:key="index">
-              <a :href="item.url">{{item.label}}</a>
+              <a :href="item.url" :style="{color: HeaderFontColor}">{{item.label}}</a>
             </li>
           </ul>
         </el-col>
@@ -19,11 +26,16 @@
 
 <script>
 
+import HeaderScrollMixin from '../mixins/HeaderScroll';
+
 export default {
   name: 'app',
   data() {
     return {};
   },
+  mixins: [
+    HeaderScrollMixin,
+  ],
   computed: {
     title() {
       return this.$store.state.site_title;
@@ -47,18 +59,14 @@ export default {
 
   a {
     font-size: 1.1rem;
-    color: #fff;
     text-decoration: none;
     transition: all .5s;
     &:hover {
       font-size: 1.15rem;
-      color: #000;
     }
   }
 
-  .logo {
-    line-height: 80px;
-  }
+  .logo {}
 
   .nav {
     margin: 0;
@@ -67,7 +75,6 @@ export default {
     justify-content: flex-end;
     li {
       flex: 0 0 70px;
-      line-height: 80px;
       text-align: center;
       list-style: none;
     }
