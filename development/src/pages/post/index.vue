@@ -58,8 +58,10 @@ export default {
     this.$store.commit('setSiteDesc', config.description);
 
     // 获取文章内容
-    const slug = this.$config.env === 'prod'
-      ? window.location.pathname.substring(1) : this.$config.test_post;
+    const path = this.$config.env === 'prod'
+      ? window.location.pathname : this.$config.test_post;
+
+    const slug =  path.split('/')[1];
 
     const data = await this.$api.postDetail({
       slug,
