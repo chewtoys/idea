@@ -8,7 +8,7 @@
       </div>
       <div class="desc">
         <h1>#{{info.name}}</h1>
-        <p>{{info.description}}1111</p>
+        <p>{{info.description}}</p>
       </div>
 
       <el-main class="main">
@@ -61,7 +61,6 @@
 <script>
 
 import Header from '../../components/Header.vue';
-import Config from '../../config';
 
 export default {
   name: 'Tag',
@@ -90,8 +89,9 @@ export default {
     this.$store.commit('setSiteDesc', config.description);
 
     // 获取 Slug
-    const path = Config.env === 'prod'
-      ? window.location.pathname : '/tag/photography/';
+    const path = this.$config.env === 'prod'
+      ? window.location.pathname : this.$config.test_tag;
+
     const slug = path.split('/')[2];
 
     // 获取标签信息

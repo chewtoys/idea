@@ -58,8 +58,9 @@ export default {
     this.$store.commit('setSiteDesc', config.description);
 
     // 获取文章内容
-    // const slug = window.location.pathname.substring(1);
-    const slug = 'guan-cheng';
+    const slug = this.$config.env === 'prod'
+      ? window.location.pathname.substring(1) : this.$config.test_post;
+
     const data = await this.$api.postDetail({
       slug,
     });
