@@ -189,20 +189,20 @@
 
 .post-inner hr:before {
 	left: 0;
-	background-image: -webkit-linear-gradient(right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
-	background-image: -moz-linear-gradient(right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
-	background-image: -ms-linear-gradient(right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
-	background-image: -o-linear-gradient(right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
-	background-image: linear-gradient(right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%)
+	background-image: -webkit-linear-gradient(to right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
+	background-image: -moz-linear-gradient(to right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
+	background-image: -ms-linear-gradient(to right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
+	background-image: -o-linear-gradient(to right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
+	background-image: linear-gradient(to right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%)
 }
 
 .post-inner hr:after {
 	right: 0;
-	background-image: -webkit-linear-gradient(left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
-	background-image: -moz-linear-gradient(left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
-	background-image: -ms-linear-gradient(left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
-	background-image: -o-linear-gradient(left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
-	background-image: linear-gradient(left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%)
+	background-image: -webkit-linear-gradient(to left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
+	background-image: -moz-linear-gradient(to left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
+	background-image: -ms-linear-gradient(to left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
+	background-image: -o-linear-gradient(to left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
+	background-image: linear-gradient(to left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%)
 }
 
 .post-inner table {
@@ -298,10 +298,10 @@
 	-moz-text-emphasis: filled circle;
 	-ms-text-emphasis: filled circle;
 	text-emphasis: filled circle;
-	-webkit-text-emphasis-position: under;
-	-moz-text-emphasis-position: under;
-	-ms-text-emphasis-position: under;
-	text-emphasis-position: under
+	-webkit-text-emphasis-position: under left;
+	-moz-text-emphasis-position: under left;
+	-ms-text-emphasis-position: under left;
+	text-emphasis-position: under left
 }
 
 .post-inner code {
