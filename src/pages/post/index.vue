@@ -23,7 +23,7 @@
               <span class="name">{{item.name}}</span>
               <span class="info" v-if="item.bio"> / {{item.bio}}</span>
             </div>
-            <div class="author-more"><a href="">More</a></div>
+            <div class="author-more"><a :href="item.url">More</a></div>
           </div>
         </div>
 
@@ -80,7 +80,6 @@ export default {
 
     this.post = data;
     this.authors = data.authors;
-    console.log(data);
 
     this.$nextTick(() => {
       // Gallery Images
