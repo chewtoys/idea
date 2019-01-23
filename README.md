@@ -12,13 +12,13 @@
 
 ### Ghost 后台创建 Integrations
 
-Ghost 后台 Settings -> Integrations -> New custom integration
+Ghost 后台 `Settings -> Integrations -> New custom integration`
 
-创建完成后可以看到 Content API Key
+创建完成后可以看到 `Content API Key`
 
 ### 创建 config.js
 
-首先需要在 src 目录下创建 config.js
+首先需要在 `src` 目录下创建 `config.js`
 
 ```js
 export default {
@@ -38,9 +38,6 @@ $ npm run build
 ```
 
 打包完成后 dist 文件夹内的文件即为主题文件，压缩成 zip 即可使用。
-
-# Next
-
 
 # Copyright & License
 
