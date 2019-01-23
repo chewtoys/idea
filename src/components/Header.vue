@@ -60,9 +60,9 @@ export default {
   a {
     font-size: 1.1rem;
     text-decoration: none;
-    transition: all .5s;
+    transition: all .3s;
     &:hover {
-      font-size: 1.15rem;
+      color: #000000 !important;
     }
   }
 
@@ -75,7 +75,6 @@ export default {
     justify-content: flex-end;
     li {
       flex: 0 0 70px;
-      text-align: center;
       list-style: none;
     }
   }

@@ -53,6 +53,25 @@ async function tagList(params) {
   return data;
 }
 
+// 获取作者信息
+async function authorInfo(params) {
+  const data = await api.authors.browse({
+    include: 'count.posts',
+    filter: `slug:${params.slug}`,
+  });
+  return data;
+}
+
+// 作者文章列表
+async function authorPostList(params) {
+  const data = await api.posts.browse({
+    limit: 10,
+    include: 'tags,authors',
+    filter: `authors:${params.slug}`,
+  });
+  return data;
+}
+
 // 博客设置
 async function setting() {
   const data = await api.settings.browse();
@@ -64,5 +83,7 @@ export default {
   postDetail,
   tagInfo,
   tagList,
+  authorInfo,
+  authorPostList,
   setting,
 };
