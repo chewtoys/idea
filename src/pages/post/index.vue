@@ -16,12 +16,22 @@
         >
         </div>
 
+        <div class="author-inner">
+          <div class="author-inner-item" v-for="(item, index) in authors" v-bind:key="index">
+            <div class="author-image"><img :src="item.profile_image"></div>
+            <div class="author-info">
+              <span class="name">{{item.name}}</span>
+              <span class="info" v-if="item.bio"> / {{item.bio}}</span>
+            </div>
+            <div class="author-more"><a href="">More</a></div>
+          </div>
+        </div>
+
         <div class="comment-inner">
           <div id="disqus_thread"></div>
         </div>
 
       </el-main>
-
 
       <el-footer class="footer" height="80px">© 2018 {{title}} All right Reserved.</el-footer>
     </el-container>
@@ -37,6 +47,7 @@ export default {
   data() {
     return {
       post: {},
+      authors: [],
     };
   },
   components: {
@@ -66,7 +77,9 @@ export default {
     const data = await this.$api.postDetail({
       slug,
     });
+
     this.post = data;
+    this.authors = data.authors;
     console.log(data);
 
     this.$nextTick(() => {
@@ -135,6 +148,42 @@ export default {
       padding: 30px;
       background: #ffffff;
       border-radius: 5px;
+    }
+    .author-inner {
+      max-width: 1140px;
+      margin: 0 auto 30px;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 5px;
+      .author-inner-item {
+        display: flex;
+        .author-image {
+          flex: 0 0 50px;
+          border-radius: 25px;
+          overflow: hidden;
+          font-size: 0;
+        }
+        .author-info {
+          flex: 1;
+          padding-left: 20px;
+          line-height: 50px;
+          font-size: 18px;
+          font-weight: 300;
+        }
+        .author-more {
+          justify-content: flex-end;
+          padding-left: 10px;
+          line-height: 50px;
+          font-size: 18px;
+          a {
+            color: #6c757d;
+            transition: all .3s;
+          }
+          a:hover {
+            color: #000000;
+          }
+        }
+      }
     }
     .comment-inner {
       max-width: 1140px;

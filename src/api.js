@@ -25,6 +25,7 @@ async function postDetail(params) {
     },
     {
       formats: ['html'],
+      include: 'tags,authors',
     },
   );
   return data;
