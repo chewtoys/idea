@@ -41,8 +41,9 @@ module.exports = {
   configureWebpack: {
     plugins: [
       new CopyWebpackPlugin([{
-        from: 'config/*',
-        to: 'test',
+        from: 'package.json',
+        to: '',
+        toType: 'file',
       }]),
     ]
   },
