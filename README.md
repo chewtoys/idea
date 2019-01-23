@@ -41,7 +41,6 @@ $ npm run build
 
 # Next
 
-- 博客作者内容页面
 
 # Copyright & License
 
