@@ -61,7 +61,7 @@ export default {
     const path = this.$config.env === 'prod'
       ? window.location.pathname : this.$config.test_post;
 
-    const slug =  path.split('/')[1];
+    const slug = path.split('/')[1];
 
     const data = await this.$api.postDetail({
       slug,

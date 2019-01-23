@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
 
@@ -35,6 +36,24 @@ module.exports = {
       chunks: ['chunk-vendors', 'chunk-common', 'error']
     },
 
-  }
+  },
+
+  configureWebpack: {
+    plugins: [
+      new CopyWebpackPlugin([{
+        from: 'config/*',
+        to: 'test',
+      }]),
+    ]
+  },
+
+  // chainWebpack: config => {
+  //   config
+  //     .plugin('copy-webpack-plugin')
+  //     .use(new CopyWebpackPlugin([{
+  //       from: 'dist/',
+  //       to: '../../test/',
+  //     }]))
+  // }
 
 }
