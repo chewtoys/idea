@@ -15,7 +15,7 @@
           <article
             v-for="(item, index) of posts"
             v-bind:key="index"
-            class="posts"
+            class="posts hairline"
           >
 
             <el-row :gutter="30">
@@ -144,9 +144,14 @@ export default {
       border-radius: 5px;
 
       .posts {
+        position: relative;
         width: 86%;
         margin: 0 auto;
         padding: 30px 0;
+
+        &:last-child::after {
+          border: none;
+        }
 
         .post-feature {
           position: relative;

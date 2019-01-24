@@ -15,6 +15,22 @@ img {
   width: 100%;
 }
 
+/* 1px 下划线 */
+.hairline::after {
+    content: ' ';
+    position: absolute;
+    pointer-events: none;
+    box-sizing: border-box;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    border: 0 solid #ebedf0;
+    border-bottom-width: 1px;
+}
+
 /* Ghost Editor Style */
 
 .kg-width-wide {
