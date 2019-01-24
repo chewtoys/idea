@@ -30,7 +30,7 @@ export default {
       let lastTime = null;
       return () => {
         const nowTime = (new Date()).getTime();
-        if (nowTime - lastTime > 100 || !lastTime) {
+        if (nowTime - lastTime > 50 || !lastTime) {
           fn();
           lastTime = nowTime;
         }

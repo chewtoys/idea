@@ -58,3 +58,30 @@ img {
 .kg-gallery-image:not(:first-of-type) {
     margin: 0 0 0 0.75em;
 }
+
+/* TOC */
+
+.toc-list {
+    margin: 0;
+    padding: 0;
+    list-style-type:none;
+    counter-reset:sectioncounter;
+
+    li {
+        color: #424b50;
+        a {
+            line-height: 1.8;
+            color: #424b50;
+            font-size: 14px;
+            &.node-name--H1 {
+                font-weight: 500;
+            }
+        }
+        &:before {
+            padding-right: 10px;
+            content:counter(sectioncounter) ""; 
+            counter-increment:sectioncounter;
+            font-weight: 500;
+        }
+    }
+}

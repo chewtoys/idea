@@ -7,7 +7,7 @@ import '../../element';
 
 import 'normalize.css';
 import 'element-ui/lib/theme-chalk/index.css';
-import '../../assets/stylesheets/reset.css';
+import '../../assets/stylesheets/reset.less';
 
 Vue.prototype.$api = api;
 

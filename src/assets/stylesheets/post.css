@@ -1,11 +1,5 @@
 
-.post-inner {
-	margin-top: 0;
-	margin-bottom: 0;
-	margin-left: 0;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 640px;
+.post-inner-html {
 	padding: 0 16px;
 	line-height: 2;
 	color: #424b50;
@@ -17,95 +11,96 @@
 	-ms-text-size-adjust: 100%
 }
 
-.post-inner div,.post-inner p,.post-inner blockquote,.post-inner pre,.post-inner ul,.post-inner ol,.post-inner table,.post-inner figure,.post-inner section,.post-inner article,.post-inner header,.post-inner footer {
+.post-inner-html div,.post-inner-html p,.post-inner-html blockquote,.post-inner-html pre,.post-inner-html ul,.post-inner-html ol,.post-inner-html table,.post-inner-html figure,.post-inner-html section,.post-inner-html article,.post-inner-html header,.post-inner-html footer {
 	margin: 0;
 	padding: 0;
 	margin-top: 16px;
 	margin-bottom: 16px
 }
 
-.post-inner div:first-child,.post-inner p:first-child,.post-inner blockquote:first-child,.post-inner pre:first-child,.post-inner ul:first-child,.post-inner ol:first-child,.post-inner table:first-child,.post-inner figure:first-child,.post-inner section:first-child,.post-inner article:first-child,.post-inner header:first-child,.post-inner footer:first-child {
+.post-inner-html div:first-child,.post-inner-html p:first-child,.post-inner-html blockquote:first-child,.post-inner-html pre:first-child,.post-inner-html ul:first-child,.post-inner-html ol:first-child,.post-inner-html table:first-child,.post-inner-html figure:first-child,.post-inner-html section:first-child,.post-inner-html article:first-child,.post-inner-html header:first-child,.post-inner-html footer:first-child {
 	margin-top: 0
 }
 
-.post-inner div:last-child,.post-inner p:last-child,.post-inner blockquote:last-child,.post-inner pre:last-child,.post-inner ul:last-child,.post-inner ol:last-child,.post-inner table:last-child,.post-inner figure:last-child,.post-inner section:last-child,.post-inner article:last-child,.post-inner header:last-child,.post-inner footer:last-child {
+.post-inner-html div:last-child,.post-inner-html p:last-child,.post-inner-html blockquote:last-child,.post-inner-html pre:last-child,.post-inner-html ul:last-child,.post-inner-html ol:last-child,.post-inner-html table:last-child,.post-inner-html figure:last-child,.post-inner-html section:last-child,.post-inner-html article:last-child,.post-inner-html header:last-child,.post-inner-html footer:last-child {
 	margin-bottom: 0
 }
 
-.post-inner ul div,.post-inner ol div,.post-inner ul p,.post-inner ol p,.post-inner ul blockquote,.post-inner ol blockquote,.post-inner ul pre,.post-inner ol pre,.post-inner ul ul,.post-inner ol ul,.post-inner ul ol,.post-inner ol ol,.post-inner ul table,.post-inner ol table,.post-inner ul figure,.post-inner ol figure,.post-inner ul iframe,.post-inner ol iframe,.post-inner ul section,.post-inner ol section,.post-inner ul article,.post-inner ol article,.post-inner ul header,.post-inner ol header,.post-inner ul footer,.post-inner ol footer {
+.post-inner-html ul div,.post-inner-html ol div,.post-inner-html ul p,.post-inner-html ol p,.post-inner-html ul blockquote,.post-inner-html ol blockquote,.post-inner-html ul pre,.post-inner-html ol pre,.post-inner-html ul ul,.post-inner-html ol ul,.post-inner-html ul ol,.post-inner-html ol ol,.post-inner-html ul table,.post-inner-html ol table,.post-inner-html ul figure,.post-inner-html ol figure,.post-inner-html ul iframe,.post-inner-html ol iframe,.post-inner-html ul section,.post-inner-html ol section,.post-inner-html ul article,.post-inner-html ol article,.post-inner-html ul header,.post-inner-html ol header,.post-inner-html ul footer,.post-inner-html ol footer {
 	margin-top: 0;
 	margin-bottom: 0
 }
 
-.post-inner>iframe {
+.post-inner-html>iframe {
 	display: block;
 	margin-top: 16px;
 	margin-bottom: 16px
 }
 
-.post-inner>img,.post-inner>video {
+.post-inner-html>img,.post-inner-html>video {
 	margin-top: 16px;
 	margin-bottom: 16px;
 	display: block
 }
 
-.post-inner h1,.post-inner h2,.post-inner h3,.post-inner h4,.post-inner h5,.post-inner h6 {
+.post-inner-html h1,.post-inner-html h2,.post-inner-html h3,.post-inner-html h4,.post-inner-html h5,.post-inner-html h6 {
 	margin-top: 0;
 	margin-bottom: 10px;
 	padding: 0
 }
 
-.post-inner h1:first-child,.post-inner h2:first-child,.post-inner h3:first-child,.post-inner h4:first-child,.post-inner h5:first-child,.post-inner h6:first-child {
+.post-inner-html h1:first-child,.post-inner-html h2:first-child,.post-inner-html h3:first-child,.post-inner-html h4:first-child,.post-inner-html h5:first-child,.post-inner-html h6:first-child {
 	margin-top: 0
 }
 
-.post-inner>h1,.post-inner>h2, .post-inner>h3,.post-inner>h4,.post-inner>h5,.post-inner>h6 {
-	margin-top: 32px
+.post-inner-html>h1,.post-inner-html>h2, .post-inner-html>h3,.post-inner-html>h4,.post-inner-html>h5,.post-inner-html>h6 {
+	margin-top: 32px;
+	outline: none;
 }
 
-.post-inner h1+*,.post-inner h2+*,.post-inner h3+*,.post-inner h4+*,.post-inner h5+*,.post-inner h6+* {
-	margin-top: 0
+.post-inner-html h1+*,.post-inner-html h2+*,.post-inner-html h3+*,.post-inner-html h4+*,.post-inner-html h5+*,.post-inner-html h6+* {
+	margin-top: 0;
 }
 
-.post-inner h1,.post-inner h2,.post-inner h3,.post-inner h4,.post-inner h5,.post-inner h6 {
+.post-inner-html h1,.post-inner-html h2,.post-inner-html h3,.post-inner-html h4,.post-inner-html h5,.post-inner-html h6 {
 	font-weight: inherit;
 	color: #424b50;
 	background-color: transparent
 }
 
-.post-inner h1 a,.post-inner h2 a,.post-inner h3 a,.post-inner h4 a,.post-inner h5 a,.post-inner h6 a {
+.post-inner-html h1 a,.post-inner-html h2 a,.post-inner-html h3 a,.post-inner-html h4 a,.post-inner-html h5 a,.post-inner-html h6 a {
 	color: #424b50
 }
 
-.post-inner h1 a,.post-inner h2 a,.post-inner h3 a,.post-inner h4 a,.post-inner h5 a,.post-inner h6 a,.post-inner h1 em,.post-inner h2 em,.post-inner h3 em,.post-inner h4 em,.post-inner h5 em,.post-inner h6 em,.post-inner h1 u,.post-inner h2 u,.post-inner h3 u,.post-inner h4 u,.post-inner h5 u,.post-inner h6 u,.post-inner h1 abbr[title],.post-inner h2 abbr[title],.post-inner h3 abbr[title],.post-inner h4 abbr[title],.post-inner h5 abbr[title],.post-inner h6 abbr[title] {
+.post-inner-html h1 a,.post-inner-html h2 a,.post-inner-html h3 a,.post-inner-html h4 a,.post-inner-html h5 a,.post-inner-html h6 a,.post-inner-html h1 em,.post-inner-html h2 em,.post-inner-html h3 em,.post-inner-html h4 em,.post-inner-html h5 em,.post-inner-html h6 em,.post-inner-html h1 u,.post-inner-html h2 u,.post-inner-html h3 u,.post-inner-html h4 u,.post-inner-html h5 u,.post-inner-html h6 u,.post-inner-html h1 abbr[title],.post-inner-html h2 abbr[title],.post-inner-html h3 abbr[title],.post-inner-html h4 abbr[title],.post-inner-html h5 abbr[title],.post-inner-html h6 abbr[title] {
 	border-bottom-color: #424b50
 }
 
-.post-inner h1 {
+.post-inner-html h1 {
 	font-size: 28px;
 	line-height: 48px;
 	text-align: left
 }
 
-.post-inner h2 {
+.post-inner-html h2 {
 	font-size: 21px;
 	line-height: 32px;
 	text-align: left
 }
 
-.post-inner h3 {
+.post-inner-html h3 {
 	font-size: 18px;
 	line-height: 32px;
 	text-align: left
 }
 
-.post-inner h4,.post-inner h5,.post-inner h6 {
+.post-inner-html h4,.post-inner-html h5,.post-inner-html h6 {
 	line-height: 32px;
 	font-size: 16px;
 	text-align: left
 }
 
-.post-inner blockquote {
+.post-inner-html blockquote {
 	position: relative;
 	padding: 0 0 0 11px;
 	margin: 16px 0;
@@ -113,11 +108,11 @@
 	border-left: 5px solid #c3cace
 }
 
-.post-inner li blockquote {
+.post-inner-html li blockquote {
 	margin-left: -21px
 }
 
-.post-inner pre {
+.post-inner-html pre {
 	padding: 15px 16px;
 	line-height: 16px;
 	font-size: 14px;
@@ -129,45 +124,45 @@
 	background-color: #f7f7f9
 }
 
-.post-inner ul,.post-inner ol {
+.post-inner-html ul,.post-inner-html ol {
 	padding-left: 32px
 }
 
-.post-inner ul li,.post-inner ol li {
+.post-inner-html ul li,.post-inner-html ol li {
 	margin: 0;
 	padding: 0;
 	list-style-position: outside
 }
 
-.post-inner ul li {
+.post-inner-html ul li {
 	list-style-type: square
 }
 
-.post-inner ul li ul li {
+.post-inner-html ul li ul li {
 	list-style-type: disc
 }
 
-.post-inner ul li ul li ul li {
+.post-inner-html ul li ul li ul li {
 	list-style-type: circle
 }
 
-.post-inner ol li {
+.post-inner-html ol li {
 	list-style-type: decimal
 }
 
-.post-inner ol li ol li {
+.post-inner-html ol li ol li {
 	list-style-type: upper-roman
 }
 
-.post-inner ol li ol li ol li {
+.post-inner-html ol li ol li ol li {
 	list-style-type: lower-roman
 }
 
-.post-inner li>ul,.post-inner li>ol {
+.post-inner-html li>ul,.post-inner-html li>ol {
 	padding-left: 32px
 }
 
-.post-inner hr {
+.post-inner-html hr {
 	position: relative;
 	padding-top: 32px;
 	margin-top: -2px;
@@ -178,7 +173,7 @@
 	border-bottom: 2px dashed #888
 }
 
-.post-inner hr:before,.post-inner hr:after {
+.post-inner-html hr:before,.post-inner-html hr:after {
 	content: '';
 	position: absolute;
 	bottom: -2px;
@@ -187,7 +182,7 @@
 	pointer-events: none
 }
 
-.post-inner hr:before {
+.post-inner-html hr:before {
 	left: 0;
 	background-image: -webkit-linear-gradient(to right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
 	background-image: -moz-linear-gradient(to right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
@@ -196,7 +191,7 @@
 	background-image: linear-gradient(to right, rgba(255,255,255,0) 0, #fff 80%, #fff 100%)
 }
 
-.post-inner hr:after {
+.post-inner-html hr:after {
 	right: 0;
 	background-image: -webkit-linear-gradient(to left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
 	background-image: -moz-linear-gradient(to left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%);
@@ -205,7 +200,7 @@
 	background-image: linear-gradient(to left, rgba(255,255,255,0) 0, #fff 80%, #fff 100%)
 }
 
-.post-inner table {
+.post-inner-html table {
 	display: table;
 	padding: 0;
 	margin-left: auto;
@@ -220,65 +215,65 @@
 	border-radius: .5em
 }
 
-.post-inner table caption {
+.post-inner-html table caption {
 	padding: 0
 }
 
-.post-inner table thead th {
+.post-inner-html table thead th {
 	text-align: left
 }
 
-.post-inner table tbody {
+.post-inner-html table tbody {
 	margin: 0 16px
 }
 
-.post-inner table tbody tr:nth-child(odd) td,.post-inner table tbody tr:nth-child(odd) th {
+.post-inner-html table tbody tr:nth-child(odd) td,.post-inner-html table tbody tr:nth-child(odd) th {
 	background-color: #f9f9f9
 }
 
-.post-inner table tbody tr:last-child td,.post-inner table tbody tr:last-child th {
+.post-inner-html table tbody tr:last-child td,.post-inner-html table tbody tr:last-child th {
 	padding-bottom: 6px
 }
 
-.post-inner table td,.post-inner table th {
+.post-inner-html table td,.post-inner-html table th {
 	padding: 8px 16px 7px;
 	border: 1px solid #ddd
 }
 
-.post-inner iframe {
+.post-inner-html iframe {
 	vertical-align: text-bottom
 }
 
-.post-inner a {
+.post-inner-html a {
 	padding-bottom: .025em;
 	color: #069;
 	text-decoration: none;
 	border-bottom-color: #08c
 }
 
-.post-inner a:focus {
+.post-inner-html a:focus {
 	outline: thin dotted
 }
 
-.post-inner a:visited {
+.post-inner-html a:visited {
 	color: #551a8b;
 	border-bottom-color: #551a8b
 }
 
-.post-inner a:hover {
+.post-inner-html a:hover {
 	border-bottom-width: 1px;
 	border-bottom-style: solid
 }
 
-.post-inner a:hover,.post-inner a:active {
+.post-inner-html a:hover,.post-inner-html a:active {
 	outline: 0
 }
 
-.post-inner b,.post-inner strong {
+.post-inner-html b,.post-inner-html strong {
 	font-weight: bold
 }
 
-.post-inner u {
+.post-inner-html u {
 	padding-bottom: .05em;
 	font-style: inherit;
 	font-weight: inherit;
@@ -286,11 +281,11 @@
 	border-bottom: 1px solid #8b98a0
 }
 
-.post-inner u+u {
+.post-inner-html u+u {
 	margin-left: .125em
 }
 
-.post-inner em {
+.post-inner-html em {
 	font-style: inherit;
 	font-weight: inherit;
 	text-decoration: inherit;
@@ -304,14 +299,14 @@
 	text-emphasis-position: under left
 }
 
-.post-inner code {
+.post-inner-html code {
 	font-family: monospace;
 	font-size: inherit;
 	color: #424b50;
 	background-color: transparent
 }
 
-.post-inner pre code {
+.post-inner-html pre code {
 	padding: 0;
 	margin: 0;
 	font-family: consolas,monaco,monospace;
@@ -321,73 +316,88 @@
 	border: none
 }
 
-.post-inner img,.post-inner video {
+.post-inner-html img,.post-inner-html video {
 	max-width: 100%;
 	border: 0
 }
 
-.post-inner figure img {
+.post-inner-html figure img {
 	display: block;
 	margin: 0 auto
 }
 
-.post-inner figure figcaption {
+.post-inner-html figure figcaption {
 	display: block;
 	text-align: center;
 	font-style: italic
 }
 
-.post-inner cite {
+.post-inner-html cite {
 	font-style: inherit
 }
 
-.post-inner cite:before,.post-inner cite:after {
+.post-inner-html cite:before,.post-inner-html cite:after {
 	content: "《";
 	line-height: inherit
 }
 
-.post-inner cite:after {
+.post-inner-html cite:after {
 	content: "》"
 }
 
-.post-inner abbr[title] {
+.post-inner-html abbr[title] {
 	padding-bottom: .05em;
 	cursor: help;
 	border-bottom: 1px dotted #424b50
 }
 
-.post-inner dfn {
+.post-inner-html dfn {
 	font-style: italic
 }
 
-.post-inner mark {
+.post-inner-html mark {
 	background: #ff0;
 	color: #424b50
 }
 
-.post-inner q {
+.post-inner-html q {
 	quotes: "\201C" "\201D" "\2018" "\2019"
 }
 
-.post-inner small {
+.post-inner-html small {
 	font-size: 80%
 }
 
-.post-inner sub,.post-inner sup {
+.post-inner-html sub,.post-inner-html sup {
 	font-size: 75%;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline
 }
 
-.post-inner sup {
+.post-inner-html sup {
 	top: -0.5em
 }
 
-.post-inner sub {
+.post-inner-html sub {
 	bottom: -0.25em
 }
 
-.post-inner #disqus_thread {
+.post-inner-html #disqus_thread {
 	margin-top: 32px
+}
+
+/* TOC Fixed */
+
+.post-inner-html h1::before,
+.post-inner-html h2::before,
+.post-inner-html h3::before,
+.post-inner-html h4::before,
+.post-inner-html h5::before,
+.post-inner-html h6::before {
+    display: block;
+    content: " ";
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
 }

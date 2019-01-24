@@ -10,10 +10,17 @@
 
       <el-main class="post">
 
-        <div class="post-inner"
-          v-if="post.html"
-          v-html="post.html"
-        >
+        <div class="post-inner">
+
+          <div class="post-inner-toc">
+            <div class="post-inner-toc-html"></div>
+          </div>
+          <div
+            class="post-inner-html"
+            v-if="post.html"
+            v-html="post.html"
+          >
+          </div>
         </div>
 
         <div class="author-inner">
@@ -33,6 +40,8 @@
 
       </el-main>
 
+      <div class="toc"></div>
+
       <el-footer class="footer" height="80px">© 2018 {{title}} All right Reserved.</el-footer>
     </el-container>
   </div>
@@ -40,6 +49,7 @@
 
 <script>
 
+import Tocbot from 'tocbot';
 import Header from '../../components/Header.vue';
 
 export default {
@@ -91,6 +101,16 @@ export default {
         const ratio = width / height;
         container.style.flex = `${ratio} 1 0%]`;
       });
+
+      // Toc Init
+      Tocbot.init({
+        tocSelector: '.post-inner-toc-html',
+        contentSelector: '.post-inner',
+        headingSelector: 'h1, h2, h3',
+        positionFixedSelector: '.post-inner',
+        positionFixedClass: 'is-position-fixed',
+        fixedSidebarOffset: 300,
+      });
     });
   },
 };
@@ -141,13 +161,55 @@ export default {
     overflow: initial;
     z-index: 1;
     .post-inner {
-      max-width: 1140px;
+      position: relative;
+      max-width: 1200px;
       min-height: 300px;
       margin: -100px auto 30px;
-      padding: 30px;
-      background: #ffffff;
-      border-radius: 5px;
+
+
+      .post-inner-toc {
+        width: 100%;
+        margin-bottom: 30px;
+        transition: top .3s;
+        .post-inner-toc-html {
+          padding: 30px;
+          background: #ffffff;
+          border-radius: 5px;
+        }
+      }
+
+      .post-inner-html {
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 5px;
+      }
+
+      @media (min-width: 768px) {
+
+        .post-inner-toc {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 270px;
+          padding-right: 30px;
+        }
+
+        .post-inner-html {
+          margin-left: 300px;
+        }
+
+        &.is-position-fixed {
+          justify-content: flex-end;
+          .post-inner-toc {
+            position: fixed;
+            top: 90px;
+            left: calc((100% - 1200px) / 2);
+          }
+        }
+
+      }
     }
+
     .author-inner {
       max-width: 1140px;
       margin: 0 auto 30px;
