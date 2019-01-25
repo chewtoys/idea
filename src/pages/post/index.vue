@@ -34,7 +34,7 @@
           </div>
         </div>
 
-        <div class="comment-inner">
+        <div class="comment-inner" v-if="showDisqus">
           <div id="disqus_thread"></div>
         </div>
 
@@ -58,6 +58,7 @@ export default {
     return {
       post: {},
       authors: [],
+      showDisqus: false,
     };
   },
   components: {
@@ -111,6 +112,15 @@ export default {
         positionFixedClass: 'is-position-fixed',
         fixedSidebarOffset: 300,
       });
+
+      // Disqus
+      if (this.$config.disqus) {
+        const s = document.createElement('script');
+        s.src = `https://${this.$config.disqus}.disqus.com/embed.js`;
+        s.setAttribute('data-timestamp', +new Date());
+        document.body.appendChild(s);
+        this.showDisqus = true;
+      }
     });
   },
 };

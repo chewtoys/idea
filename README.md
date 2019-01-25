@@ -34,8 +34,10 @@ export default {
   env: 'prod', // prod 正式环境 dev 测试环境
   test_post: '', // 文章内容页测试Slug
   test_tag: '', // 标签列表页测试Slug
+  test_author: '', // 作者页测试 Slug
   ghost_host: '', // 博客完整网址
   ghost_key: '', // 填入上一步创建的 Content API Key
+  disqus: '', // Disqus ID， 不使用则不填
 };
 ```
 
