@@ -4,8 +4,6 @@
 
 使用了最新的 Ghost API V2，所以您的 Ghost 版本需要 >= 2.1.0
 
-使用此主题需要了解一些 JS、NPM，请谨慎使用
-
 # 特性
 
 - 使用 Vue 提升用户体验
@@ -16,8 +14,6 @@
 - (慢悠悠的开发中 ...)
 
 # 如何使用
-
-由于将密钥打包进了JS，所以大家使用时需要重新编译。
 
 ### Ghost 后台创建 Integrations
 
@@ -40,14 +36,13 @@ Ghost 后台 `Settings -> Integrations -> New custom integration`
 </script>
 ```
 
-### Build
+### Install
 
-```bash
-$ npm i
-$ npm run build
-```
+前往 [Releases](https://github.com/lh1me/idea/releases) 下载 ZIP 安装包
 
-打包完成后 dist 文件夹内的文件即为主题文件，压缩成 zip 即可使用。
+前往 Ghost 后台 `Design -> Upload a theme`，上传安装包
+
+启用主题即可
 
 # Copyright & License
 
