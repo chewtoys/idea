@@ -1,10 +1,14 @@
-
 import GhostContentAPI from '@tryghost/content-api';
-import Config from './config';
+import Config from '../config/config';
+
+// 开发模式下设置全局设置
+if (Config.env === 'dev') {
+  window.config = Config;
+}
 
 const api = new GhostContentAPI({
-  host: Config.ghost_host,
-  key: Config.ghost_key,
+  host: window.config.ghost_host,
+  key: window.config.ghost_key,
   version: 'v2',
 });
 

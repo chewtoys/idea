@@ -25,20 +25,19 @@ Ghost 后台 `Settings -> Integrations -> New custom integration`
 
 创建完成后可以看到 `Content API Key`
 
-### 创建 config.js
+### Code injection
 
-首先需要在 `src` 目录下创建 `config.js`
+首先需要在 `Code injection` 中的 Blog Header 加入自己的配置
 
-```js
-export default {
-  env: 'prod', // prod 正式环境 dev 测试环境
-  test_post: '', // 文章内容页测试Slug
-  test_tag: '', // 标签列表页测试Slug
-  test_author: '', // 作者页测试 Slug
-  ghost_host: '', // 博客完整网址
-  ghost_key: '', // 填入上一步创建的 Content API Key
-  disqus: '', // Disqus ID， 不使用则不填
-};
+```html
+<script>
+  window.config = {
+    env: 'prod',
+    ghost_host: '' // 网站完整网址，如 https://linhong.me
+    ghost_key: '' // 填入上一步创建的 Content API Key,
+    disqus: '' // 选填： Disqus 用户名，不填则不启用,
+  };
+</script>
 ```
 
 ### Build

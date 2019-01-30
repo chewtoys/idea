@@ -40,11 +40,13 @@ module.exports = {
 
   configureWebpack: {
     plugins: [
-      new CopyWebpackPlugin([{
-        from: 'package.json',
-        to: '',
-        toType: 'file',
-      }]),
+      new CopyWebpackPlugin([
+        {
+          from: 'package.json',
+          to: '',
+          toType: 'file',
+        }
+      ]),
     ]
   },
 

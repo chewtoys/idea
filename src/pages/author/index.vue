@@ -89,8 +89,8 @@ export default {
     this.$store.commit('setSiteDesc', config.description);
 
     // 获取 Slug
-    const path = this.$config.env === 'prod'
-      ? window.location.pathname : this.$config.test_author;
+    const path = window.config.env === 'prod'
+      ? window.location.pathname : window.config.test_author;
 
     const slug = path.split('/')[2];
 

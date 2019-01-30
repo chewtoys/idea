@@ -80,8 +80,8 @@ export default {
     this.$store.commit('setSiteDesc', config.description);
 
     // 获取文章内容
-    const path = this.$config.env === 'prod'
-      ? window.location.pathname : this.$config.test_post;
+    const path = window.config.env === 'prod'
+      ? window.location.pathname : window.config.test_post;
 
     const slug = path.split('/')[1];
 
@@ -114,9 +114,9 @@ export default {
       });
 
       // Disqus
-      if (this.$config.disqus) {
+      if (window.config.disqus) {
         const s = document.createElement('script');
-        s.src = `https://${this.$config.disqus}.disqus.com/embed.js`;
+        s.src = `https://${window.config.disqus}.disqus.com/embed.js`;
         s.setAttribute('data-timestamp', +new Date());
         document.body.appendChild(s);
         this.showDisqus = true;

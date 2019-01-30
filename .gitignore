@@ -15,4 +15,4 @@ yarn-error.log*
 static/.gitkeep
 
 # Config
-src/config.js
+config/config.js
