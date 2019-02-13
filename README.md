@@ -23,7 +23,7 @@ Ghost 后台 `Settings -> Integrations -> New custom integration`
 
 ### Code injection
 
-首先需要在 `Code injection` 中的 Blog Header 加入自己的配置
+首先需要在 `Code Injection` 中的 Blog Header 加入自己的配置
 
 ```html
 <script>

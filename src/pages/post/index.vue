@@ -10,37 +10,45 @@
 
       <el-main class="post">
 
-        <div class="post-inner">
+          <div class="post-col-left">
+            <div class="post-widget">
 
-          <div class="post-inner-toc">
-            <div class="post-inner-toc-html"></div>
-          </div>
-          <div
-            class="post-inner-html"
-            v-if="post.html"
-            v-html="post.html"
-          >
-          </div>
-        </div>
+              <div class="post-toc">
+                <div class="post-toc-html"></div>
+              </div>
 
-        <div class="author-inner">
-          <div class="author-inner-item" v-for="(item, index) in authors" v-bind:key="index">
-            <div class="author-image"><img :src="item.profile_image"></div>
-            <div class="author-info">
-              <span class="name">{{item.name}}</span>
-              <span class="info" v-if="item.bio"> / {{item.bio}}</span>
             </div>
-            <div class="author-more"><a :href="item.url">More</a></div>
           </div>
-        </div>
 
-        <div class="comment-inner" v-if="showDisqus">
-          <div id="disqus_thread"></div>
-        </div>
+          <div class="post-col-right">
+
+            <div class="post-inner">
+              <div
+                class="post-inner-html"
+                v-if="post.html"
+                v-html="post.html"
+              >
+              </div>
+            </div>
+
+            <div class="author-inner">
+              <div class="author-inner-item" v-for="(item, index) in authors" v-bind:key="index">
+                <div class="author-image"><img :src="item.profile_image"></div>
+                <div class="author-info">
+                  <span class="name">{{item.name}}</span>
+                  <span class="info" v-if="item.bio"> / {{item.bio}}</span>
+                </div>
+                <div class="author-more"><a :href="item.url">More</a></div>
+              </div>
+            </div>
+
+            <div class="comment-inner" v-if="showDisqus">
+              <div id="disqus_thread"></div>
+            </div>
+
+          </div>
 
       </el-main>
-
-      <div class="toc"></div>
 
       <el-footer class="footer" height="80px">© 2018 {{title}} All right Reserved.</el-footer>
     </el-container>
@@ -105,10 +113,10 @@ export default {
 
       // Toc Init
       Tocbot.init({
-        tocSelector: '.post-inner-toc-html',
-        contentSelector: '.post-inner',
+        tocSelector: '.post-toc-html',
+        contentSelector: '.post-inner-html',
         headingSelector: 'h1, h2, h3',
-        positionFixedSelector: '.post-inner',
+        positionFixedSelector: '.post',
         positionFixedClass: 'is-position-fixed',
         fixedSidebarOffset: 300,
       });
@@ -166,27 +174,52 @@ export default {
 
   // 文章列表
   .post {
+    position: relative;
     padding-bottom: 30px;
     background: #f6f6f6;
     overflow: initial;
     z-index: 1;
-    .post-inner {
-      position: relative;
-      max-width: 1200px;
-      min-height: 300px;
-      margin: -100px auto 30px;
 
+    // 左边栏
+    .post-col-left {
+      width: 280px;
+      position: absolute;
+      top: 20px;
+      left: calc((100% - 1200px) / 2);
+    }
+    @media (max-width: 1200px) {
+      .post-col-left {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+    }
 
-      .post-inner-toc {
-        width: 100%;
-        margin-bottom: 30px;
+    // 右边栏
+    .post-col-right {
+      max-width: 900px;
+      margin: 0 auto;
+      padding-left: 300px;
+    }
+
+    // 左边栏部件样式
+    .post-widget {
+      margin-bottom: 20px;
+      .post-toc {
         transition: top .3s;
-        .post-inner-toc-html {
+        .post-toc-html {
           padding: 30px;
           background: #ffffff;
           border-radius: 5px;
         }
       }
+    }
+
+    // 文章内容页样式
+    .post-inner {
+      position: relative;
+      min-height: 300px;
+      margin-bottom: 20px;
 
       .post-inner-html {
         padding: 30px;
@@ -194,35 +227,11 @@ export default {
         border-radius: 5px;
       }
 
-      @media (min-width: 768px) {
-
-        .post-inner-toc {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 270px;
-          padding-right: 30px;
-        }
-
-        .post-inner-html {
-          margin-left: 300px;
-        }
-
-        &.is-position-fixed {
-          justify-content: flex-end;
-          .post-inner-toc {
-            position: fixed;
-            top: 90px;
-            left: calc((100% - 1200px) / 2);
-          }
-        }
-
-      }
     }
 
+    // 作者信息样式
     .author-inner {
-      max-width: 1140px;
-      margin: 0 auto 30px;
+      margin-bottom: 20px;
       padding: 30px;
       background: #ffffff;
       border-radius: 5px;
@@ -256,12 +265,39 @@ export default {
         }
       }
     }
+
+    // 评论框调整
     .comment-inner {
-      max-width: 1140px;
-      margin: 0 auto;
       padding: 30px;
       background: #ffffff;
       border-radius: 5px;
+    }
+
+    // 动态边栏调整
+    &.is-position-fixed {
+      .post-col-left {
+        position: fixed;
+        top: 80px;
+      }
+    }
+
+    // 响应式边栏调整
+    @media (max-width: 768px) {
+      .post-col-left {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+      .post-col-right {
+        padding-left: 0;
+      }
+      &.is-position-fixed {
+        .post-col-left {
+          position: relative;
+          top: auto;
+        }
+      }
     }
   }
 
