@@ -1,8 +1,18 @@
 # idea
 
-![release](https://img.shields.io/github/release/lh1me/idea.svg) ![ghost](https://img.shields.io/badge/Ghost-%3E%3D2.10.0-blue.svg) ![license](https://img.shields.io/github/license/lh1me/idea.svg)
+<a href="https://github.com/lh1me/idea/releases">
+    <img src="https://img.shields.io/github/release/lh1me/idea.svg" alt="releases" />
+</a>
+<a href="https://github.com/lh1me/idea">
+    <img src="https://img.shields.io/badge/Ghost-%3E%3D2.10.0-blue.svg" alt="ghost" />
+</a>
+<a href="https://github.com/lh1me/idea/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/lh1me/idea.svg" alt="license" />
+</a>
 
-![idea](/docs/idea.jpg)
+<a href="https://github.com/lh1me/idea">
+    <img src="/docs/idea.jpg" alt="license" />
+</a>
 
 从 WordPress 转来玩 Ghost，使用了 Vue 作为主要开发框架
 
