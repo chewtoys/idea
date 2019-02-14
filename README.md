@@ -9,55 +9,53 @@
 <a href="https://github.com/lh1me/idea/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/lh1me/idea.svg" alt="license" />
 </a>
-<br />
+<br /><br />
 <a href="https://github.com/lh1me/idea">
     <img src="/docs/idea.jpg" alt="license" />
 </a>
-<br />
+<br /><br />
 
-从 WordPress 转来玩 Ghost，使用了 Vue 作为主要开发框架
+<a href="https://github.com/lh1me/idea/blob/master/docs/README_CN.md">中文文档</a><br /><br />
 
-使用了最新的 Ghost API V2，所以您的 Ghost 版本需要 >= 2.1.0
+# Feature
 
-# 特性
+- Use Vue
+- Use Ghost API V2
+- Compatible with Ghost features and optimized for SEO
+- Support for Responsive
+- Support article TOC
+- (...)
 
-- 使用 Vue 提升用户体验
-- 使用 Ghost API V2 提升安全性
-- 兼容 Ghost 特性并优化 SEO
-- 支持响应式前端
-- 支持文章内容自动 TOC
-- (慢悠悠的开发中 ...)
+# Quickstart
 
-# 如何使用
+### Ghost Create Integrations
 
-### Ghost 后台创建 Integrations
+Ghost Admin `Settings -> Integrations -> New custom integration`
 
-Ghost 后台 `Settings -> Integrations -> New custom integration`
+Copy `Content API Key`
 
-创建完成后可以看到 `Content API Key`
+### Code Injection
 
-### Code injection
-
-首先需要在 `Code Injection` 中的 Blog Header 加入自己的配置
+Add the following code to the `Blog Header` in `Code Injection`
 
 ```html
 <script>
   window.config = {
     env: 'prod',
-    ghost_host: '' // 网站完整网址，如 https://linhong.me
-    ghost_key: '' // 填入上一步创建的 Content API Key,
-    disqus: '' // 选填： Disqus 用户名，不填则不启用,
+    ghost_host: '' // Website Full URL, e.g. https://linhong.me
+    ghost_key: '' // Content API Key,
+    disqus: '' // Option:  Disqus Username,
   };
 </script>
 ```
 
-### Install
+### Install Theme
 
-前往 [Releases](https://github.com/lh1me/idea/releases) 下载 ZIP 安装包
+Go to [Releases](https://github.com/lh1me/idea/releases) Download the ZIP installation package
 
-前往 Ghost 后台 `Design -> Upload a theme`，上传安装包
+Go to Ghost Admin `Design -> Upload a theme`, Upload the ZIP package
 
-启用主题即可
+Enable the theme.
 
 # Copyright & License
 
