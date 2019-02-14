@@ -1,5 +1,9 @@
 # idea
 
+![release](https://img.shields.io/github/release/lh1me/idea.svg) ![ghost](https://img.shields.io/badge/Ghost-%3E%3D2.10.0-blue.svg) ![license](https://img.shields.io/github/license/lh1me/idea.svg)
+
+![idea](/docs/idea.jpg)
+
 从 WordPress 转来玩 Ghost，使用了 Vue 作为主要开发框架
 
 使用了最新的 Ghost API V2，所以您的 Ghost 版本需要 >= 2.1.0
