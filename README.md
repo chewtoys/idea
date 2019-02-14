@@ -9,10 +9,11 @@
 <a href="https://github.com/lh1me/idea/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/lh1me/idea.svg" alt="license" />
 </a>
-
+<br />
 <a href="https://github.com/lh1me/idea">
     <img src="/docs/idea.jpg" alt="license" />
 </a>
+<br />
 
 从 WordPress 转来玩 Ghost，使用了 Vue 作为主要开发框架
 
