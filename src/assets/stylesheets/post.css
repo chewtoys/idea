@@ -113,15 +113,11 @@
 }
 
 .post-inner-html pre {
-	padding: 15px 16px;
-	line-height: 16px;
+	line-height: 1.6;
 	font-size: 14px;
 	white-space: pre;
 	word-wrap: normal;
 	overflow: auto;
-	font-family: consolas,monaco,monospace;
-	border: 1px solid #e1e1e8;
-	background-color: #f7f7f9
 }
 
 .post-inner-html ul,.post-inner-html ol {
@@ -297,23 +293,6 @@
 	-moz-text-emphasis-position: under left;
 	-ms-text-emphasis-position: under left;
 	text-emphasis-position: under left
-}
-
-.post-inner-html code {
-	font-family: monospace;
-	font-size: inherit;
-	color: #424b50;
-	background-color: transparent
-}
-
-.post-inner-html pre code {
-	padding: 0;
-	margin: 0;
-	font-family: consolas,monaco,monospace;
-	font-size: 14px;
-	color: #424b50;
-	background: none;
-	border: none
 }
 
 .post-inner-html img,.post-inner-html video {

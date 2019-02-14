@@ -60,6 +60,8 @@
 <script>
 
 import Tocbot from 'tocbot';
+import Hljs from 'highlight.js';
+
 import Header from '../../components/Header.vue';
 import Cover from '../../components/Cover.vue';
 
@@ -125,6 +127,11 @@ export default {
         positionFixedSelector: '.post',
         positionFixedClass: 'is-position-fixed',
         fixedSidebarOffset: 300,
+      });
+
+      // Highlight
+      document.querySelectorAll('.post-inner-html code').forEach((block) => {
+        Hljs.highlightBlock(block);
       });
 
       // Disqus

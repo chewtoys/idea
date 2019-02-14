@@ -7,6 +7,7 @@ import '../../element';
 
 import 'normalize.css';
 import 'element-ui/lib/theme-chalk/index.css';
+import 'highlight.js/styles/monokai-sublime.css';
 import '../../assets/stylesheets/reset.less';
 import '../../assets/stylesheets/post.css';
 

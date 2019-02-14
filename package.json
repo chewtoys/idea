@@ -40,6 +40,7 @@
         "@tryghost/content-api": "^1.0.0",
         "dayjs": "^1.7.8",
         "element-ui": "^2.4.11",
+        "highlight.js": "^9.14.2",
         "normalize.css": "^8.0.1",
         "tocbot": "^4.4.3",
         "vue": "^2.5.21",
