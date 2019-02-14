@@ -2,10 +2,12 @@
   <div id="post">
     <el-container>
       <Header></Header>
+      <Cover
+        :height="300"
+        :mask=".5"
+        :image="coverImage" >
+      </Cover>
 
-      <div class="cover">
-        <div class="cover-mask"></div>
-      </div>
       <div class="desc" v-if="post.title">{{post.title}}</div>
 
       <el-main class="post">
@@ -59,6 +61,7 @@
 
 import Tocbot from 'tocbot';
 import Header from '../../components/Header.vue';
+import Cover from '../../components/Cover.vue';
 
 export default {
   name: 'Post',
@@ -67,10 +70,12 @@ export default {
       post: {},
       authors: [],
       showDisqus: false,
+      coverImage: '',
     };
   },
   components: {
     Header,
+    Cover,
   },
   computed: {
     title() {
@@ -86,6 +91,7 @@ export default {
     this.$store.commit('setSiteTitle', config.title);
     this.$store.commit('setSiteNav', config.navigation);
     this.$store.commit('setSiteDesc', config.description);
+    this.coverImage = config.cover_image;
 
     // 获取文章内容
     const path = window.config.env === 'prod'
@@ -137,25 +143,6 @@ export default {
 <style lang="less" scoped>
 #post {
   position: relative;
-
-  // 封面
-  .cover {
-    position: relative;
-    width: 100%;
-    min-height: 360px;
-    background: url(../../assets/background.jpg) no-repeat;
-    background-position: bottom;
-    background-size: cover;
-
-    .cover-mask {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(#000000, 0.5);
-    }
-  }
 
   // 介绍
   .desc {

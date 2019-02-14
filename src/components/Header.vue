@@ -29,7 +29,7 @@
 import HeaderScrollMixin from '../mixins/HeaderScroll';
 
 export default {
-  name: 'app',
+  name: 'HeaderComponent',
   data() {
     return {};
   },
