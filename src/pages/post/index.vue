@@ -200,7 +200,7 @@ export default {
       top: 20px;
       left: calc((100% - 1200px) / 2);
     }
-    @media (max-width: 1200px) {
+    @media (max-width: 1240px) {
       .post-col-left {
         position: absolute;
         top: 20px;
