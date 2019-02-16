@@ -310,6 +310,9 @@ export default {
         top: 0;
         left: 0;
         width: 100%;
+        .post-totop {
+          display: none;
+        }
       }
       .post-col-right {
         padding-left: 0;

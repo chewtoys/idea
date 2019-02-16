@@ -62,7 +62,7 @@ export default {
     text-decoration: none;
     transition: all .3s;
     &:hover {
-      color: #000000 !important;
+      color: #bbbbbb !important;
     }
   }
 
