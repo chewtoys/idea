@@ -24,6 +24,8 @@
 - Compatible with Ghost features and optimized for SEO
 - Support for Responsive
 - Support article TOC
+- Support code highlighting
+- Chinese display optimization
 - (...)
 
 # Quickstart
