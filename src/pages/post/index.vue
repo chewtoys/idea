@@ -19,6 +19,8 @@
                 <div class="post-toc-html"></div>
               </div>
 
+              <div class="post-totop" @click="toTop">返回顶部</div>
+
             </div>
           </div>
 
@@ -144,6 +146,23 @@ export default {
       }
     });
   },
+  methods: {
+    toTop() {
+      let timer;
+      const gotoTop = () => {
+        let currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        currentPosition -= 10;
+        if (currentPosition > 0) {
+          window.scrollTo(0, currentPosition);
+        } else {
+          window.scrollTo(0, 0);
+          clearInterval(timer);
+          timer = null;
+        }
+      };
+      timer = setInterval(gotoTop, 1);
+    },
+  },
 };
 </script>
 
@@ -200,12 +219,21 @@ export default {
     .post-widget {
       margin-bottom: 20px;
       .post-toc {
+        margin-bottom: 20px;
         transition: top .3s;
         .post-toc-html {
-          padding: 30px;
+          padding: 20px 30px;
           background: #ffffff;
           border-radius: 5px;
         }
+      }
+      .post-totop {
+        padding: 20px 30px;
+        font-size: 14px;
+        text-align: center;
+        color: #424b50;
+        background: #fff;
+        cursor: pointer;
       }
     }
 
