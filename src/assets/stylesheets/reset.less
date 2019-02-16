@@ -81,23 +81,28 @@ img {
     margin: 0;
     padding: 0;
     list-style-type:none;
-    counter-reset:sectioncounter;
 
-    li {
+    .toc-list-item {
+        padding-bottom: 5px;
         color: #424b50;
-        a {
-            line-height: 1.8;
-            color: #424b50;
-            font-size: 14px;
-            &.node-name--H1 {
-                font-weight: 500;
-            }
+
+        .toc-list {
+            padding-top: 5px;
+            padding-left: 15px;
         }
-        &:before {
-            padding-right: 10px;
-            content:counter(sectioncounter) ""; 
-            counter-increment:sectioncounter;
+    }
+
+    a {
+        color: #424b50;
+        line-height: 1.8;
+        &.node-name--H1 {
+            margin-bottom: 5px;
+            font-size: 14px;
             font-weight: 500;
+        }
+        &.node-name--H2 {
+            font-size: 13px;
+            font-weight: 400;
         }
     }
 }
