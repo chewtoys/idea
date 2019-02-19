@@ -1,11 +1,14 @@
 <template>
   <div id="post">
     <el-container>
-      <Header></Header>
+      <Header
+        :title="config.title"
+        :navigation="config.navigation" >
+      </Header>
       <Cover
         :height="300"
         :mask=".5"
-        :image="coverImage" >
+        :image="config.coverImage" >
       </Cover>
 
       <div class="desc" v-if="post.title">{{post.title}}</div>
@@ -54,7 +57,7 @@
 
       </el-main>
 
-      <el-footer class="footer" height="80px">© 2018 {{title}} All right Reserved.</el-footer>
+      <el-footer class="footer" height="80px">© 2018 {{config.title}} All right Reserved.</el-footer>
     </el-container>
   </div>
 </template>
@@ -66,6 +69,8 @@ import Hljs from 'highlight.js';
 
 import Header from '../../components/Header.vue';
 import Cover from '../../components/Cover.vue';
+
+import ConfigMixin from '../../mixins/Config';
 
 export default {
   name: 'Post',
@@ -81,22 +86,10 @@ export default {
     Header,
     Cover,
   },
-  computed: {
-    title() {
-      return this.$store.state.site_title;
-    },
-    description() {
-      return this.$store.state.site_desc;
-    },
-  },
+  mixins: [
+    ConfigMixin,
+  ],
   async mounted() {
-    // 获取博客设置
-    const config = await this.$api.setting();
-    this.$store.commit('setSiteTitle', config.title);
-    this.$store.commit('setSiteNav', config.navigation);
-    this.$store.commit('setSiteDesc', config.description);
-    this.coverImage = config.cover_image;
-
     // 获取文章内容
     const path = window.config.env === 'prod'
       ? window.location.pathname : window.config.test_post;

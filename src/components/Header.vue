@@ -36,14 +36,7 @@ export default {
   mixins: [
     HeaderScrollMixin,
   ],
-  computed: {
-    title() {
-      return this.$store.state.site_title;
-    },
-    navigation() {
-      return this.$store.state.site_nav;
-    },
-  },
+  props: ['title', 'navigation'],
   components: {},
   mounted() {},
 };
