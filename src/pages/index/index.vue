@@ -55,7 +55,15 @@
         <div class="pagination-inner"></div>
       </div>
 
-      <el-footer class="footer" height="80px">© 2018 {{config.title}} All right Reserved.</el-footer>
+      <el-footer height="auto" style="padding: 0 0 60px 0;">
+        <Footer
+          :title="config.title"
+          :navigation="config.navigation"
+          :facebook="config.socialFacebook"
+          :twitter="config.socialTwitter" >
+        </Footer>
+      </el-footer>
+
     </el-container>
   </div>
 </template>
@@ -63,6 +71,7 @@
 <script>
 
 import Header from '../../components/Header.vue';
+import Footer from '../../components/Footer.vue';
 import Cover from '../../components/Cover.vue';
 
 import ConfigMixin from '../../mixins/Config';
@@ -76,6 +85,7 @@ export default {
   },
   components: {
     Header,
+    Footer,
     Cover,
   },
   mixins: [
@@ -209,13 +219,5 @@ export default {
     }
   }
 
-
-  // 底部
-  .footer {
-    line-height: 80px;
-    font-size: .9rem;
-    color: #6c757d;
-    text-align: center;
-  }
 }
 </style>

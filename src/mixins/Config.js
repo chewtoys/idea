@@ -6,6 +6,8 @@ export default {
         navigation: [],
         description: [],
         coverImage: '',
+        socialFacebook: '',
+        socialTwitter: '',
       },
     };
   },
@@ -16,5 +18,7 @@ export default {
     this.config.navigation = config.navigation;
     this.config.description = config.description;
     this.config.coverImage = config.cover_image;
+    this.config.socialFacebook = config.facebook;
+    this.config.socialTwitter = config.twitter;
   },
 };
