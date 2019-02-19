@@ -25,6 +25,7 @@
       >
         <div class="footer-item-title">Social</div>
         <div class="footer-item-links">
+          <p><a href="/rss/" target="_blank">RSS</a></p>
           <p v-if="facebook"><a :href="`https://www.facebook.com/${facebook}`" target="_blank">Facebook</a></p>
           <p v-if="twitter"><a :href="`https://twitter.com/${twitter}`" target="_blank">Twitter</a></p>
         </div>
@@ -36,7 +37,7 @@
       >
         <div class="footer-item-title">About</div>
         <div class="footer-item-detail">
-          <p>Copyright © 2012-2019 {{title}}</p>
+          <p>Copyright © 2019 {{title}}</p>
           <p>Theme by <a href="https://linhong.me/ghost-idea" target="_blank">idea</a></p>
         </div>
       </el-col>
