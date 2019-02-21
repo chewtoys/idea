@@ -9,7 +9,7 @@
 
       <el-col
         class="footer-item footer-item__nav"
-        :xs="24" :sm="6" :md="6"
+        :xs="24" :sm="5" :md="5" :offset="3"
       >
         <div class="footer-item-title">Navigation</div>
         <ul>
@@ -21,7 +21,7 @@
 
       <el-col
         class="footer-item"
-        :xs="24" :sm="6" :md="6"
+        :xs="24" :sm="5" :md="5"
       >
         <div class="footer-item-title">Social</div>
         <div class="footer-item-links">
@@ -33,7 +33,7 @@
 
       <el-col
         class="footer-item"
-        :xs="24" :sm="6" :md="6"
+        :xs="24" :sm="5" :md="5"
       >
         <div class="footer-item-title">About</div>
         <div class="footer-item-detail">
@@ -129,5 +129,12 @@ export default {
       }
     }
   }
+
+  @media only screen and (max-width: 767px) {
+    .el-col-offset-3 {
+      margin-left: 0 !important;
+    }
+  }
+
 }
 </style>
