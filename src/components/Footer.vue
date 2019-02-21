@@ -81,6 +81,7 @@ export default {
         color: #6c757d;
         a {
           color: #000000;
+          transition: all .3s;
         }
         a:hover {
           color: #6c757d;
@@ -95,6 +96,7 @@ export default {
         color: #6c757d;
         a {
           color: #6c757d;
+          transition: all .3s;
         }
         a:hover {
           color: #000000;
@@ -119,6 +121,7 @@ export default {
         list-style: none;
         a {
           color: #6c757d;
+          transition: all .3s;
         }
         a:hover {
           color: #000000;
