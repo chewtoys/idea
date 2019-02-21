@@ -11,7 +11,13 @@
         :image="config.coverImage" >
       </Cover>
 
-      <div class="desc" v-if="post.title">{{post.title}}</div>
+      <div class="desc">
+        <div class="desc-title">{{post.title}}</div>
+        <div class="desc-info">
+          <span><a :href="post.primary_tag.url">{{post.primary_tag.name}}</a></span>/
+          <span>{{post.updated_at}}</span>
+        </div>
+      </div>
 
       <el-main class="post">
 
@@ -74,6 +80,7 @@
 
 import Tocbot from 'tocbot';
 import Hljs from 'highlight.js';
+import DayJS from 'dayjs';
 
 import Header from '../../components/Header.vue';
 import Footer from '../../components/Footer.vue';
@@ -109,6 +116,9 @@ export default {
     const data = await this.$api.postDetail({
       slug,
     });
+
+    // 格式化时间
+    data.updated_at = DayJS(data.updated_at).format('YYYY-MM-DD');
 
     this.post = data;
     this.authors = data.authors;
@@ -179,13 +189,35 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    padding-top: 120px;
-    font-size: 2.2rem;
-    font-weight: 300;
-    text-align: center;
-    color: #fff;
-    user-select: none;
+    padding-top: 130px;
     z-index: 1;
+    .desc-title {
+      padding-bottom: 20px;
+      font-size: 2.2rem;
+      font-weight: 300;
+      text-align: center;
+      color: #fff;
+      user-select: none;
+    }
+    .desc-info {
+      font-size: 1.1rem;
+      font-weight: 300;
+      text-align: center;
+      color: #aaa;
+      user-select: none;
+      text-transform: uppercase;
+      a,span {
+        color: #aaa;
+        transition: all .3s;
+      }
+      span {
+        padding: 0 10px;
+      }
+      a:hover,
+      span:hover {
+        color: #fff;
+      }
+    }
   }
 
   // 文章列表
