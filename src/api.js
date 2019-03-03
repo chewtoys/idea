@@ -13,10 +13,11 @@ const api = new GhostContentAPI({
 });
 
 // 文章列表
-async function posts() {
+async function posts(page) {
   const data = await api.posts.browse({
     limit: 10,
     include: 'tags,authors',
+    page,
   });
   return data;
 }
@@ -54,6 +55,7 @@ async function tagList(params) {
     limit: 10,
     include: 'tags,authors',
     filter: `tags:${params.slug}`,
+    page: params.page,
   });
   return data;
 }
@@ -73,6 +75,7 @@ async function authorPostList(params) {
     limit: 10,
     include: 'tags,authors',
     filter: `authors:${params.slug}`,
+    page: params.page,
   });
   return data;
 }

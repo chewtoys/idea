@@ -52,7 +52,15 @@
       </el-main>
 
       <div class="pagination">
-        <div class="pagination-inner"></div>
+        <div class="pagination-inner">
+          <el-pagination
+            layout="prev, pager, next"
+            :page-size="10"
+            :page-count="pageCount"
+            :current-page="currentPage"
+            @current-change="pageChange">
+          </el-pagination>
+        </div>
       </div>
 
       <el-footer height="auto" style="padding: 0 0 60px 0;">
@@ -81,6 +89,8 @@ export default {
   data() {
     return {
       posts: [],
+      currentPage: 1,
+      pageCount: 1,
     };
   },
   components: {
@@ -93,8 +103,16 @@ export default {
   ],
   async mounted() {
     // 获取文章列表
-    const data = await this.$api.posts();
+    const data = await this.$api.posts(1);
     this.posts = data;
+    this.pageCount = data.meta.pagination.pages;
+  },
+  methods: {
+    async pageChange(e) {
+      const data = await this.$api.posts(e);
+      this.posts = data;
+      console.log(e);
+    },
   },
 };
 </script>
@@ -216,6 +234,14 @@ export default {
       max-width: 1140px;
       margin: 0 auto;
       border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      .el-pagination {
+        border-radius: 5px;
+        overflow: hidden;
+        padding: 0;
+        color: #999;
+      }
     }
   }
 
