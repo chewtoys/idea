@@ -120,6 +120,10 @@
 	overflow: auto;
 }
 
+.post-inner-html pre code {
+	padding: 20px;
+}
+
 .post-inner-html ul,.post-inner-html ol {
 	padding-left: 32px
 }
